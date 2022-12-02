@@ -13,8 +13,8 @@ namespace ChatEF.Entities
         public int UserId { get; set; }
         public bool IsRead { get; set; }
         public bool IsDelivered { get; set; }
-        public Message? Message { get; set; } = null!;
-        public User? User{ get; set; } = null!;
+        //public Message? Message { get; set; } = null!;
+        //public User? User{ get; set; } = null!;
 
     }
 }

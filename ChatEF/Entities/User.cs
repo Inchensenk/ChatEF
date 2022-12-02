@@ -13,8 +13,18 @@ namespace ChatEF.Entities
         public string PhoneNumber { get; set; } = null!;
         public string Password { get; set; } =null!;
 
-        public Chat? Chat { get; set; }
-        public UserChatLink? UserChatLink { get; set; }=null!;   
-        public MessageStatus? MessageStatus { get; set; }
+        public List<Chat> Chats { get; set; }
+
+        public List<Message> Messages { get; set; }
+
+        public User()
+        {
+            Chats = new List<Chat>();
+            Messages = new List<Message>();
+        }
+
+        //public Chat? Chat { get; set; }
+        //public UserChatLink? UserChatLink { get; set; }=null!;   
+        //public MessageStatus? MessageStatus { get; set; }
     }
 }

@@ -19,6 +19,8 @@ namespace ChatEF.Entities.Configuration
 
             builder.Property(user => user.Password)
                 .IsRequired();
+
+            
         }
     }
 }

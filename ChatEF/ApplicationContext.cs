@@ -17,7 +17,7 @@ namespace ChatEF
         public DbSet<Message> Messages { get; set; }
         public DbSet<MessageStatus> MessageStatuses { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<UserChatLink> UserChatLinks { get; set; }
+
 
         public ApplicationContext()
         {
@@ -32,19 +32,14 @@ namespace ChatEF
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /*OnUserCreated(modelBuilder);*/
             modelBuilder.ApplyConfiguration(new ChatConfiguration());
             modelBuilder.ApplyConfiguration(new MessegeConfiguration());
-            modelBuilder.ApplyConfiguration(new UserChatLinkConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new MessageStatusConfigarition());
-
+            
         }
 
-        /*private void OnUserCreated(ModelBuilder modelBuilder)
-        {
-            //данные пользователя сохраненные после регистрации
-        }*/
+
 
         public override async ValueTask DisposeAsync()
         {

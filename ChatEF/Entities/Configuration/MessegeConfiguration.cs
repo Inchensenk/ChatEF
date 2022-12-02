@@ -17,7 +17,7 @@ namespace ChatEF.Entities.Configuration
             builder.Property(messege => messege.MessageText)
                    .HasMaxLength(500);
 
-            builder.
+            
         }
     }
 }

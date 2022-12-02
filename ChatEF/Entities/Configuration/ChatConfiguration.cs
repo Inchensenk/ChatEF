@@ -20,6 +20,7 @@ namespace ChatEF.Entities.Configuration
             builder.Property(chat => chat.ChatName)
                    .HasMaxLength(50);
 
+            builder.HasOne<User>(user => user.User).WithMany(chat => chat.Chats);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace ChatEF.Entities
         public string ChatName { get; set; } = null!;
         public int UserId { get; set; }
         public User? User { get; set; } = null!;
-        public UserChatLink? UserChatLink { get; set; }=null!;
-        public Message? Message { get; set; } = null!;   
+        //public UserChatLink? UserChatLink { get; set; }=null!;
+        //public Message? Message { get; set; } = null!;   
     }
 }
