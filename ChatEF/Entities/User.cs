@@ -11,20 +11,14 @@ namespace ChatEF.Entities
         public int Id { get; set; }
         public string NickName { get; set; } = null!;
         public string PhoneNumber { get; set; } = null!;
-        public string Password { get; set; } =null!;
-
-        public List<Chat> Chats { get; set; }
-
-        public List<Message> Messages { get; set; }
+        public string FirstName { get; set; } = null!;
+        public string LastName { get; set; } = null!;
+        public Authorization? Authorization { get; set; }
+        public List<Conversation> Conversations { get; set; }
 
         public User()
         {
-            Chats = new List<Chat>();
-            Messages = new List<Message>();
+            Conversations= new List<Conversation>();
         }
-
-        //public Chat? Chat { get; set; }
-        //public UserChatLink? UserChatLink { get; set; }=null!;   
-        //public MessageStatus? MessageStatus { get; set; }
     }
 }

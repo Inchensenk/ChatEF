@@ -13,11 +13,11 @@ namespace ChatEF
     {
         private readonly StreamWriter logStream = new StreamWriter("mylog.txt", true);
 
-        public DbSet<Chat> Chats { get; set; }
+   
         public DbSet<Message> Messages { get; set; }
-        public DbSet<MessageStatus> MessageStatuses { get; set; }
         public DbSet<User> Users { get; set; }
-
+        public DbSet<Conversation> conversations { get; set; }
+        public DbSet<Authorization> Authorizations { get; set; }
 
         public ApplicationContext()
         {
@@ -27,15 +27,14 @@ namespace ChatEF
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\\mssqllocaldb; Database=CHAT; Trusted_Connection=True; Encrypt=false");
+            //optionsBuilder.UseSqlServer(@"Server=(localdb)\\mssqllocaldb; Database=ChatEF; Trusted_Connection=True; Encrypt=false");
+            optionsBuilder.UseSqlServer(@"Data Source=s-dev-01; Database=ChatEF; Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new ChatConfiguration());
-            modelBuilder.ApplyConfiguration(new MessegeConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
-            modelBuilder.ApplyConfiguration(new MessageStatusConfigarition());
+
             
         }
 

@@ -8,16 +8,13 @@ using System.Threading.Tasks;
 
 namespace ChatEF.Entities.Configuration
 {
-    public class MessegeConfiguration : IEntityTypeConfiguration<Message>
+    public class MessageConfiguration : IEntityTypeConfiguration<Message>
     {
         public void Configure(EntityTypeBuilder<Message> builder)
         {
-            builder.HasKey(messege => messege.Id);
+            builder.HasKey(a => a.Id);
 
-            builder.Property(messege => messege.MessageText)
-                   .HasMaxLength(500);
-
-            
+            builder.HasOne(c => c.Conversation).WithMany(m => m.Messages);
         }
     }
 }

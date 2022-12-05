@@ -9,12 +9,11 @@ namespace ChatEF.Entities
     public class Message
     {
         public int Id { get; set; }
-        public int ChatId { get; set; }
+        public string FromNumber { get; set; } = null!;
         public string MessageText { get; set; } = null!;
+        public DateTime SendDateTime { get; set; }
 
-
-        //public Chat? Chat { get; set; }= null!;
-        //public MessageStatus? MessageStatus { get; set; } = null!;
-
+        public int ConversationId { get; set; }
+        public Conversation? Conversation { get; set; }
     }
 }

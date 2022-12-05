@@ -17,8 +17,7 @@ namespace ChatEF.Entities.Configuration
             builder.Property(user => user.PhoneNumber)
                 .IsRequired().HasMaxLength(12);
 
-            builder.Property(user => user.Password)
-                .IsRequired();
+   
 
             
         }
